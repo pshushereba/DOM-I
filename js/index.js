@@ -46,7 +46,13 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 links = document.querySelectorAll("nav a");
 links.forEach((item, i) => {
   item.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  item.style.color = "green";
 });
+
+navHome = document.createElement("a");
+navHome.textContent = "Home";
+// console.log(navHome);
+// nav.prepend(navHome);
 
 // CTA styling
 
@@ -100,3 +106,24 @@ visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
 const visionContent = bcContent[2];
 visionContent.textContent = siteContent["main-content"]["vision-content"];
+
+// Contact Styling
+
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+const contactInfo = document.querySelectorAll(".contact p");
+
+const contactAddress = contactInfo[0];
+contactAddress.textContent = siteContent["contact"]["address"];
+
+const contactPhone = contactInfo[1];;
+contactPhone.textContent = siteContent["contact"]["phone"];
+
+const contactEmail = contactInfo[2];;
+contactEmail.textContent = siteContent["contact"]["email"];
+
+// Footer
+
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];
