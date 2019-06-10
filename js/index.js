@@ -61,6 +61,12 @@ navLinks.prepend(navHome);
 navLinks.appendChild(navBlog);
 console.log(navLinks);
 
+const updatedLinks = document.querySelectorAll("a");
+
+updatedLinks.forEach((item, i) => {
+  item.style.color = "green";
+});
+
 // CTA styling
 
 let ctaText = document.querySelector(".cta-text h1");
@@ -73,7 +79,7 @@ let ctaBtn = document.querySelector(".cta-text button");
 ctaBtn.textContent = siteContent["cta"]["button"];
 
 ctaBtn.addEventListener("click", (event) => {
-  links.forEach((item, i) => {
+  updatedLinks.forEach((item, i) => {
     item.style.color = "black";
   });
 });
