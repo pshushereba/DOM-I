@@ -46,13 +46,20 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 links = document.querySelectorAll("nav a");
 links.forEach((item, i) => {
   item.textContent = siteContent["nav"][`nav-item-${i+1}`];
-  item.style.color = "green";
+  // item.style.color = "green";
 });
 
-navHome = document.createElement("a");
+const navHome = document.createElement("a");
+const navBlog = document.createElement("a");
+
 navHome.textContent = "Home";
-// console.log(navHome);
-// nav.prepend(navHome);
+navBlog.textContent = "Blog";
+
+const navLinks = document.querySelector("nav");
+
+navLinks.prepend(navHome);
+navLinks.appendChild(navBlog);
+console.log(navLinks);
 
 // CTA styling
 
@@ -64,6 +71,12 @@ ctaLogo.src = siteContent["cta"]["img-src"];
 
 let ctaBtn = document.querySelector(".cta-text button");
 ctaBtn.textContent = siteContent["cta"]["button"];
+
+ctaBtn.addEventListener("click", (event) => {
+  links.forEach((item, i) => {
+    item.style.color = "black";
+  });
+});
 
 // Main Content styling
 
